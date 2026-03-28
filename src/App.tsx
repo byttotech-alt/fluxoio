@@ -21,6 +21,7 @@ import { TasksPage } from '@/pages/TasksPage';
 import { WikiPage } from '@/pages/WikiPage';
 import { SettingsPage } from '@/pages/SettingsPage';
 import { ComingSoonPage } from '@/pages/ComingSoonPage';
+import { AuthCallbackPage } from '@/pages/AuthCallbackPage';
 import { LoadingScreen } from '@/components/ui/LoadingScreen';
 
 const queryClient = new QueryClient({
@@ -73,6 +74,7 @@ export default function App() {
         <Routes>
           {/* Auth */}
           <Route path="/auth" element={<AuthRoute><AuthPage /></AuthRoute>} />
+          <Route path="/auth/callback" element={<AuthCallbackPage />} />
           <Route path="/auth/reset" element={<AuthPage />} />
 
           {/* Onboarding */}
