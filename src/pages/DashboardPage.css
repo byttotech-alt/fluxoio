@@ -1,0 +1,268 @@
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Greeting ──────────────────────────────────────────── */
+.dashboard-greeting h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.dashboard-greeting p {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  margin-top: 4px;
+}
+
+/* ─── KPI Cards ─────────────────────────────────────────── */
+.dashboard-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 16px;
+}
+
+.kpi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.kpi-icon {
+  min-width: 40px;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.kpi-label {
+  font-size: 0.8125rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.kpi-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.kpi-change {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+.kpi-change.positive {
+  background: rgba(34, 197, 94, 0.1);
+  color: #22C55E;
+}
+
+.kpi-change.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+}
+
+/* ─── Charts ────────────────────────────────────────────── */
+.dashboard-charts-row,
+.dashboard-bottom-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 16px;
+}
+
+.dashboard-chart {
+  padding: 20px;
+}
+
+.dashboard-chart h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.small-chart {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── Transactions ──────────────────────────────────────── */
+.dashboard-transactions {
+  padding: 20px;
+}
+
+.dashboard-transactions h3 {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.txn-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.txn-empty {
+  text-align: center;
+  padding: 24px;
+  color: var(--text-tertiary);
+  font-size: 0.8125rem;
+}
+
+.txn-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.txn-item:last-child {
+  border-bottom: none;
+}
+
+.txn-type-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.txn-type-icon.receita {
+  background: rgba(34, 197, 94, 0.12);
+  color: #22C55E;
+}
+
+.txn-type-icon.despesa {
+  background: rgba(239, 68, 68, 0.12);
+  color: #EF4444;
+}
+
+.txn-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.txn-desc {
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.txn-date {
+  font-size: 0.6875rem;
+  color: var(--text-tertiary);
+}
+
+.txn-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.txn-amount {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.txn-amount.receita {
+  color: #22C55E;
+}
+
+.txn-amount.despesa {
+  color: #EF4444;
+}
+
+.txn-status {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+/* ─── Alerts ────────────────────────────────────────────── */
+.dashboard-alerts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 12px;
+}
+
+.alert-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 18px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+}
+
+.alert-card.warning {
+  border-left: 3px solid var(--color-warning);
+  color: var(--color-warning);
+}
+
+.alert-card.info {
+  border-left: 3px solid var(--color-info);
+  color: var(--color-info);
+}
+
+.alert-card.error {
+  border-left: 3px solid var(--color-error);
+  color: var(--color-error);
+}
+
+/* ─── Recharts custom ──────────────────────────────────── */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-color);
+}
+
+.recharts-legend-item-text {
+  color: var(--text-secondary) !important;
+  font-size: 0.75rem !important;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .dashboard-charts-row,
+  .dashboard-bottom-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .dashboard-kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-kpis {
+    grid-template-columns: 1fr;
+  }
+}

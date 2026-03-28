@@ -1,0 +1,328 @@
+.auth-page {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-primary);
+}
+
+/* ─── Branding Panel ────────────────────────────────────── */
+.auth-branding {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0F1117 0%, #1A1D2E 50%, #1E2140 100%);
+  position: relative;
+  overflow: hidden;
+  padding: 48px;
+}
+
+.auth-branding-content {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+}
+
+.auth-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+.auth-logo-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #6C63FF, #4F8EF7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+}
+
+.auth-logo-text {
+  font-size: 1.75rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #6C63FF, #4F8EF7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.auth-branding-title {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  color: #F1F5F9;
+  margin-bottom: 20px;
+}
+
+.auth-branding-subtitle {
+  font-size: 1.125rem;
+  color: #94A3B8;
+  line-height: 1.7;
+}
+
+/* Animated orbs */
+.auth-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  animation: orbFloat 8s ease-in-out infinite alternate;
+}
+
+.auth-orb-1 {
+  width: 300px;
+  height: 300px;
+  background: #6C63FF;
+  top: -100px;
+  right: -50px;
+  animation-delay: 0s;
+}
+
+.auth-orb-2 {
+  width: 200px;
+  height: 200px;
+  background: #4F8EF7;
+  bottom: -50px;
+  left: -30px;
+  animation-delay: -3s;
+}
+
+.auth-orb-3 {
+  width: 150px;
+  height: 150px;
+  background: #22C55E;
+  top: 60%;
+  right: 20%;
+  animation-delay: -5s;
+}
+
+@keyframes orbFloat {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(30px, -20px) scale(1.1); }
+}
+
+/* ─── Form Panel ────────────────────────────────────────── */
+.auth-form-panel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px;
+  max-width: 560px;
+}
+
+.auth-form-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-form-title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 8px;
+}
+
+.auth-form-subtitle {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  margin-bottom: 32px;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.auth-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.auth-field label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+}
+
+.auth-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px;
+  height: 48px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  color: var(--text-tertiary);
+}
+
+.auth-input-wrapper:focus-within {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-color-muted);
+}
+
+.auth-input-wrapper input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  height: 100%;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+}
+
+.auth-input-wrapper input::placeholder {
+  color: var(--text-tertiary);
+}
+
+.auth-eye-btn {
+  display: flex;
+  align-items: center;
+  color: var(--text-tertiary);
+  transition: color var(--transition-fast);
+}
+
+.auth-eye-btn:hover {
+  color: var(--text-primary);
+}
+
+.auth-error {
+  font-size: 0.75rem;
+  color: var(--color-error);
+}
+
+.auth-forgot-btn {
+  align-self: flex-end;
+  font-size: 0.8125rem;
+  color: var(--accent-color);
+  font-weight: 500;
+  margin-top: -8px;
+  transition: opacity var(--transition-fast);
+}
+
+.auth-forgot-btn:hover {
+  opacity: 0.8;
+}
+
+.auth-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 48px;
+  background: var(--accent-gradient);
+  color: white;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  margin-top: 4px;
+}
+
+.auth-submit-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(108, 99, 255, 0.3);
+}
+
+.auth-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border-color);
+}
+
+.auth-divider span {
+  font-size: 0.8125rem;
+  color: var(--text-tertiary);
+  white-space: nowrap;
+}
+
+.auth-google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  height: 48px;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-weight: 500;
+  font-size: 0.9375rem;
+  color: var(--text-primary);
+  transition: all var(--transition-fast);
+}
+
+.auth-google-btn:hover {
+  background: var(--bg-hover);
+  border-color: var(--border-color-hover);
+}
+
+.auth-switch {
+  text-align: center;
+  margin-top: 24px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.auth-switch button {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+.auth-switch button:hover {
+  text-decoration: underline;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .auth-branding {
+    display: none;
+  }
+
+  .auth-form-panel {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .auth-form-panel {
+    padding: 24px;
+  }
+
+  .auth-branding-title {
+    font-size: 2rem;
+  }
+}

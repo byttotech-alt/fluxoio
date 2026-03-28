@@ -1,0 +1,43 @@
+.leads-page { display: flex; flex-direction: column; gap: 20px; height: calc(100vh - 120px); }
+.leads-header { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 16px; }
+.leads-header h1 { font-size: 1.5rem; font-weight: 700; }
+.leads-header p { color: var(--text-secondary); font-size: 0.875rem; margin-top: 2px; }
+.leads-actions { display: flex; gap: 10px; align-items: center; }
+.leads-search { display: flex; align-items: center; gap: 8px; padding: 0 12px; height: 38px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-md); color: var(--text-tertiary); }
+.leads-search input { background: none; border: none; outline: none; color: var(--text-primary); font-size: 0.875rem; width: 180px; }
+.leads-add-btn { display: flex; align-items: center; gap: 6px; padding: 8px 18px; background: var(--accent-gradient); color: white; font-weight: 600; font-size: 0.875rem; border-radius: var(--radius-md); transition: all var(--transition-fast); }
+.leads-add-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* Kanban */
+.kanban-board { display: flex; gap: 16px; overflow-x: auto; flex: 1; padding-bottom: 8px; }
+.kanban-column { min-width: 260px; flex: 1; display: flex; flex-direction: column; background: var(--bg-secondary); border-radius: var(--radius-lg); border: 1px solid var(--border-color); overflow: hidden; }
+.kanban-column-header { display: flex; align-items: center; gap: 8px; padding: 14px 16px; border-bottom: 1px solid var(--border-color); }
+.kanban-column-dot { width: 10px; height: 10px; border-radius: 50%; }
+.kanban-column-title { font-size: 0.8125rem; font-weight: 600; flex: 1; }
+.kanban-column-count { font-size: 0.6875rem; font-weight: 600; background: var(--bg-tertiary); padding: 2px 8px; border-radius: var(--radius-full); color: var(--text-secondary); }
+.kanban-cards { flex: 1; padding: 12px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; min-height: 100px; }
+.kanban-card { padding: 14px; cursor: grab; transition: all var(--transition-fast); }
+.kanban-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+.kanban-card:active { cursor: grabbing; }
+.kanban-card h4 { font-size: 0.875rem; font-weight: 600; margin-bottom: 4px; padding-right: 20px; }
+.kanban-delete-btn { position: absolute; top: 10px; right: 10px; background: none; border: none; color: var(--text-tertiary); cursor: pointer; opacity: 0; transition: all 0.2s; padding: 4px; border-radius: var(--radius-sm); }
+.kanban-card:hover .kanban-delete-btn { opacity: 1; }
+.kanban-delete-btn:hover { color: var(--color-error, #EF4444); background: rgba(239, 68, 68, 0.1); }
+.kanban-company { font-size: 0.75rem; color: var(--text-secondary); }
+.kanban-card-meta { display: flex; gap: 10px; margin-top: 8px; }
+.kanban-meta-item { display: flex; align-items: center; gap: 4px; font-size: 0.6875rem; color: var(--text-tertiary); }
+.kanban-source { display: inline-block; margin-top: 6px; font-size: 0.6875rem; padding: 2px 8px; background: var(--accent-color-muted); color: var(--accent-color); border-radius: var(--radius-full); font-weight: 500; }
+.kanban-empty { text-align: center; padding: 24px; font-size: 0.8125rem; color: var(--text-tertiary); border: 2px dashed var(--border-color); border-radius: var(--radius-md); }
+
+/* Modal */
+.modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); z-index: 300; display: flex; align-items: center; justify-content: center; }
+.modal-content { width: 90%; max-width: 480px; padding: 28px; }
+.modal-content h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 20px; }
+.modal-fields { display: flex; flex-direction: column; gap: 12px; }
+.modal-fields input, .modal-fields select, .modal-fields textarea { height: 44px; padding: 0 14px; background: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-primary); }
+.modal-fields input:focus, .modal-fields select:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 0 3px var(--accent-color-muted); }
+.modal-fields textarea { height: 80px; padding: 12px 14px; resize: vertical; }
+.modal-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 20px; }
+.modal-cancel { padding: 10px 20px; border-radius: var(--radius-md); font-weight: 500; color: var(--text-secondary); background: var(--bg-tertiary); }
+.modal-submit { padding: 10px 24px; border-radius: var(--radius-md); font-weight: 600; color: white; background: var(--accent-gradient); }
+.modal-submit:hover { opacity: 0.9; }
